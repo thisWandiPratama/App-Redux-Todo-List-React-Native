@@ -19,19 +19,29 @@ class TambahData extends React.Component {
 
     super(props)
     this.state = {
-       TextInput_Student_Name: '',
-       TextInput_Student_Class: '',
-       TextInput_Student_PhoneNumber: '',
-       TextInput_Student_Email: '',
+       TextInput_Nama_Lengkap: '',
+       TextInput_NISN: '',
+       TextInput_NIS: '',
+       TextInput_Alamat_Siswa: '',
       }
   }
 
  tambahdata = () =>{
-        axios.post('http://homekomputer.000webhostapp.com/api/TambahData.php', {
-          student_name : this.state.TextInput_Student_Name,
-          student_class : this.state.TextInput_Student_Class,
-          student_phone_number : this.state.TextInput_Student_PhoneNumber,
-          student_email: this.state.TextInput_Student_Email
+        axios.post('http://homekomputer.000webhostapp.com/apiv2/siswa/TambahSiswa.php', {
+          nama_lengkap : this.state.TextInput_Nama_Lengkap,
+          NISN : this.state.TextInput_NISN,
+          NIS : this.state.TextInput_NIS,
+          alamat_siswa: this.state.TextInput_Alamat_Siswa,
+          tempat_lahir : this.state.TextInput_Nama_Lengkap,
+          tanggal_lahir : this.state.TextInput_Nama_Lengkap,
+          usia_siswa : this.state.TextInput_Nama_Lengkap,
+          jenis_kelamin : this.state.TextInput_Nama_Lengkap,
+          agama : this.state.TextInput_Nama_Lengkap,
+          bank : this.state.TextInput_Nama_Lengkap,
+          No_Rekning_Bank : this.state.TextInput_Nama_Lengkap,
+          Rek_Atas_Nama : this.state.TextInput_Nama_Lengkap,
+          Layak_PIP : this.state.TextInput_Nama_Lengkap,
+          Alasan_Layak_PIP : this.state.TextInput_Nama_Lengkap,
         })
                 .then(res => { console.log(res)})
                 .catch(err => consule.log(err))  
@@ -52,7 +62,7 @@ class TambahData extends React.Component {
          
          placeholder="Enter Student Name"
  
-         onChangeText={ TextInputValue => this.setState({ TextInput_Student_Name : TextInputValue }) }
+         onChangeText={ TextInputValue => this.setState({ TextInput_Nama_Lengkap : TextInputValue }) }
  
          underlineColorAndroid='transparent'
  
@@ -63,7 +73,7 @@ class TambahData extends React.Component {
          
          placeholder="Enter Student Class"
  
-         onChangeText={ TextInputValue => this.setState({ TextInput_Student_Class : TextInputValue }) }
+         onChangeText={ TextInputValue => this.setState({ TextInput_NISN : TextInputValue }) }
  
          underlineColorAndroid='transparent'
  
@@ -74,7 +84,7 @@ class TambahData extends React.Component {
          
          placeholder="Enter Student Phone Number"
  
-         onChangeText={ TextInputValue => this.setState({ TextInput_Student_PhoneNumber : TextInputValue }) }
+         onChangeText={ TextInputValue => this.setState({ TextInput_NIS : TextInputValue }) }
  
          underlineColorAndroid='transparent'
  
@@ -85,7 +95,7 @@ class TambahData extends React.Component {
  
          placeholder="Enter Student Email"
  
-         onChangeText={ TextInputValue => this.setState({ TextInput_Student_Email : TextInputValue }) }
+         onChangeText={ TextInputValue => this.setState({ TextInput_Alamat_Siswa : TextInputValue }) }
  
          underlineColorAndroid='transparent'
  
